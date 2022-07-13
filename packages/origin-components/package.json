@@ -1,0 +1,27 @@
+{
+  "name": "@origin/components",
+  "version": "1.0.0",
+  "description": "all components",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/origin-ui/origin-react.git"
+  },
+  "keywords": [
+    "components",
+    "react"
+  ],
+  "author": "Jiaqi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/origin-ui/origin-react/issues"
+  },
+  "homepage": "https://github.com/origin-ui/origin-react#readme",
+  "dependencies": {
+    "@origin/hooks": "workspace:^1.0.0",
+    "@origin/utils": "workspace:^1.0.0"
+  }
+}
