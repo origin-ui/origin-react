@@ -4,6 +4,9 @@ importers:
 
   .:
     specifiers:
+      '@origin/components': workspace:*
+      '@origin/hooks': workspace:*
+      '@origin/utils': workspace:*
       '@testing-library/jest-dom': 4.2.4
       '@testing-library/react': ^13.3.0
       '@testing-library/user-event': ^13.5.0
@@ -11,12 +14,17 @@ importers:
       '@types/node': ^16.11.43
       '@types/react': ^18.0.15
       '@types/react-dom': ^18.0.6
+      classnames: ^2.3.1
       react: ^18.2.0
       react-dom: ^18.2.0
       react-scripts: 5.0.1
+      sass: ^1.53.0
       typescript: ^4.7.4
       web-vitals: ^2.1.4
     dependencies:
+      '@origin/components': link:packages/origin-components
+      '@origin/hooks': link:packages/origin-hooks
+      '@origin/utils': link:packages/origin-utils
       '@testing-library/jest-dom': 4.2.4
       '@testing-library/react': 13.3.0_biqbaboplfbrettd7655fr4n2y
       '@testing-library/user-event': 13.5.0
@@ -24,19 +32,25 @@ importers:
       '@types/node': 16.11.43
       '@types/react': 18.0.15
       '@types/react-dom': 18.0.6
+      classnames: 2.3.1
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
-      react-scripts: 5.0.1_qtbnez4q7bzoc4eqybg3efzzxe
+      react-scripts: 5.0.1_evleu75usofu245y3n7kory4xe
+      sass: 1.53.0
       typescript: 4.7.4
       web-vitals: 2.1.4
 
   packages/origin-components:
-    specifiers:
-      '@origin/hooks': workspace:^1.0.0
-      '@origin/utils': workspace:^1.0.0
-    dependencies:
-      '@origin/hooks': link:../origin-hooks
-      '@origin/utils': link:../origin-utils
+    specifiers: {}
+
+  packages/origin-hooks:
+    specifiers: {}
+
+  packages/origin-utils:
+    specifiers: {}
+
+  start:
+    specifiers: {}
 
 packages:
 
@@ -3462,6 +3476,10 @@ packages:
     resolution: {integrity: sha512-cOU9usZw8/dXIXKtwa8pM0OTJQuJkxMN6w30csNRUerHfeQ5R6U3kkU/FtJeIf3M202OHfY2U8ccInBG7/xogA==}
     dev: false
 
+  /classnames/2.3.1:
+    resolution: {integrity: sha512-OlQdbZ7gLfGarSqxesMesDa5uz7KFbID8Kpq/SxIoNGDqY8lSYs0D+hhtBXhcdB3rcbXArFr7vlHheLk1voeNA==}
+    dev: false
+
   /clean-css/5.3.1:
     resolution: {integrity: sha512-lCr8OHhiWCTw4v8POJovCoh4T7I9U11yVsPjMWWnnMmp9ZowCxyad1Pathle/9HjaDp+fdQKjO9fQydE6RHTZg==}
     engines: {node: '>= 10.0'}
@@ -5412,6 +5430,10 @@ packages:
 
   /immer/9.0.15:
     resolution: {integrity: sha512-2eB/sswms9AEUSkOm4SbV5Y7Vmt/bKRwByd52jfLkW4OLYeaTP3EEiJ9agqU0O/tq6Dk62Zfj+TJSqfm1rLVGQ==}
+    dev: false
+
+  /immutable/4.1.0:
+    resolution: {integrity: sha512-oNkuqVTA8jqG1Q6c+UglTOD1xhC1BtjKI7XkCXRkZHrN5m18/XsnUp8Q89GkQO/z+0WjonSvl0FLhDYftp46nQ==}
     dev: false
 
   /import-fresh/3.3.0:
@@ -8102,7 +8124,7 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /react-scripts/5.0.1_qtbnez4q7bzoc4eqybg3efzzxe:
+  /react-scripts/5.0.1_evleu75usofu245y3n7kory4xe:
     resolution: {integrity: sha512-8VAmEm/ZAwQzJ+GOMLbBsTdDKOpuZh7RPs0UymvBR2vRk4iZWCskjbFnxqjrzoIvlNNRZ3QJFx6/qDSi6zSnaQ==}
     engines: {node: '>=14.0.0'}
     hasBin: true
@@ -8151,7 +8173,7 @@ packages:
       react-refresh: 0.11.0
       resolve: 1.22.1
       resolve-url-loader: 4.0.0
-      sass-loader: 12.6.0_webpack@5.73.0
+      sass-loader: 12.6.0_sass@1.53.0+webpack@5.73.0
       semver: 7.3.7
       source-map-loader: 3.0.1_webpack@5.73.0
       style-loader: 3.3.1_webpack@5.73.0
@@ -8468,7 +8490,7 @@ packages:
     resolution: {integrity: sha512-ZRwKbh/eQ6w9vmTjkuG0Ioi3HBwPFce0O+v//ve+aOq1oeCy7jMV2qzzAlpsNuqpqCBjjriM1lbtZbF/Q8jVyA==}
     dev: false
 
-  /sass-loader/12.6.0_webpack@5.73.0:
+  /sass-loader/12.6.0_sass@1.53.0+webpack@5.73.0:
     resolution: {integrity: sha512-oLTaH0YCtX4cfnJZxKSLAyglED0naiYfNG1iXfU5w1LNZ+ukoA5DtyDIN5zmKVZwYNJP4KRc5Y3hkWga+7tYfA==}
     engines: {node: '>= 12.13.0'}
     peerDependencies:
@@ -8489,7 +8511,18 @@ packages:
     dependencies:
       klona: 2.0.5
       neo-async: 2.6.2
+      sass: 1.53.0
       webpack: 5.73.0
+    dev: false
+
+  /sass/1.53.0:
+    resolution: {integrity: sha512-zb/oMirbKhUgRQ0/GFz8TSAwRq2IlR29vOUJZOx0l8sV+CkHUfHa4u5nqrG+1VceZp7Jfj59SVW9ogdhTvJDcQ==}
+    engines: {node: '>=12.0.0'}
+    hasBin: true
+    dependencies:
+      chokidar: 3.5.3
+      immutable: 4.1.0
+      source-map-js: 1.0.2
     dev: false
 
   /sax/1.2.4:

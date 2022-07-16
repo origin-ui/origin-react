@@ -19,9 +19,5 @@
   "bugs": {
     "url": "https://github.com/origin-ui/origin-react/issues"
   },
-  "homepage": "https://github.com/origin-ui/origin-react#readme",
-  "dependencies": {
-    "@origin/hooks": "workspace:^1.0.0",
-    "@origin/utils": "workspace:^1.0.0"
-  }
+  "homepage": "https://github.com/origin-ui/origin-react#readme"
 }
